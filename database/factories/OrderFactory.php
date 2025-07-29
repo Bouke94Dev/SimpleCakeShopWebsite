@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -25,7 +25,7 @@ class OrderFactory extends Factory
             'postcode' => fake()->postcode(),
             'city' => fake()->city(),
             'phone' => fake()->phoneNumber(),
-            'amount' => fake()->numberBetween(1,10),
+            'amount' => fake()->numberBetween(1, 10),
         ];
     }
 }

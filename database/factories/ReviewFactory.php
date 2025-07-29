@@ -2,10 +2,10 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
 use App\Models\Product;
-use Illuminate\Support\Arr;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Arr;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Review>
@@ -17,7 +17,6 @@ class ReviewFactory extends Factory
      *
      * @return array<string, mixed>
      */
-
     protected $reviews = [
         ['rating' => 1, 'description' => 'Terrible. Never again.'],
         ['rating' => 2, 'description' => 'Not great.'],

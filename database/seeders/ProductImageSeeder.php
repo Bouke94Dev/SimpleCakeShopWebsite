@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\ProductImage;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class ProductImageSeeder extends Seeder
 {
@@ -23,8 +22,7 @@ class ProductImageSeeder extends Seeder
             'images/cake_seven.jpg',
         ];
 
-        foreach ($images as $image)
-        {
+        foreach ($images as $image) {
             ProductImage::create([
                 'image' => $image,
             ]);

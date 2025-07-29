@@ -2,10 +2,9 @@
 
 namespace Database\Factories;
 
-use App\Models\ProductType;
-use Illuminate\Support\Arr;
 use App\Models\ProductImage;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Arr;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
