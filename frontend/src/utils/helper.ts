@@ -1,13 +1,17 @@
-const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000/'
+const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000/images';
 
 
-export function getImageUrl(path)
+
+export function getImageUrl(path: string|undefined, blurred: boolean = false)
 {
     if(!path) return '';
 
-    if(path.startsWith('http://') || path.startsWith('https://')){
-        return path;
+
+    if (blurred) {
+        return `${baseUrl}/blurred/${path}`;
+    } else {
+        return `${baseUrl}/${path}`;
     }
 
-    return `${baseUrl}${path.startsWith('/') ? path.slice(1) : path}`;
+
 }

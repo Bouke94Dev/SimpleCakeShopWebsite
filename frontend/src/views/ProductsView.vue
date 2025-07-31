@@ -5,7 +5,12 @@
       <div v-for="product in products" :key="product.id">
           <div class="bg-white shadow-xl py-4 rounded col-span-3 col-start-3">
               <router-link :to="{ name: 'productDetail', params: { id: product.id } }">
-                <img :src="getImageUrl(product?.product_image?.image)" class="w-162 h-82 mx-auto rounded-t object-cover" alt="Product Image" />
+              <v-lazy-image 
+                  class="w-162 h-96 mx-auto rounded object-cover" 
+                  :src="getImageUrl(product?.product_image.image, false)"
+                  :src-placeholder="getImageUrl(product?.product_image.image, true)" 
+                  alt="Product Image" 
+              />
               </router-link>
               <div class="flex items-center px-1 py-1">
                   <h1 class="flex-1 px-1 py-1 font-bold">{{ product?.name }}</h1>
@@ -25,6 +30,7 @@ import { ref, onMounted } from 'vue'
 import { getImageUrl } from '@/utils/helper'
 import { fetchProducts } from '@/services/productService'
 import type { Product } from '@/types/product'
+import VLazyImage from 'v-lazy-image';
 
 const products = ref<Product[]>([])
 
