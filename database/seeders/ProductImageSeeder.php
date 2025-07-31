@@ -13,13 +13,13 @@ class ProductImageSeeder extends Seeder
     public function run(): void
     {
         $images = [
-            'images/cake_one.jpg',
-            'images/cake_two.jpg',
-            'images/cake_three.jpg',
-            'images/cake_four.jpg',
-            'images/cake_five.jpg',
-            'images/cake_six.jpg',
-            'images/cake_seven.jpg',
+            'cake_one.jpg',
+            'cake_two.jpg',
+            'cake_three.jpg',
+            'cake_four.jpg',
+            'cake_five.jpg',
+            'cake_six.jpg',
+            'cake_seven.jpg',
         ];
 
         foreach ($images as $image) {
