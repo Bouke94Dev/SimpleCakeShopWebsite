@@ -1,5 +1,6 @@
 import ProductDetailView from '@/views/ProductDetailView.vue';
 import ProductsView from '@/views/ProductsView.vue';
+import Login from '@/views/Login.vue';
 
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -7,12 +8,19 @@ export const routes = [
   { path: '/', 
     name: 'home',
     component: ProductsView,
-    meta: { showInNav: true} 
+    meta: { showInNav: true, icon: 'home'} 
   },
   {
     path: '/products/:id',
     name: 'productDetail',
     component: ProductDetailView,
+    meta: { showInNav: false} 
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
+    meta: { showInNav: true, icon: 'user'} 
   }
 ];
 

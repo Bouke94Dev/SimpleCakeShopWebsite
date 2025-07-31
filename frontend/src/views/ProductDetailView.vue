@@ -1,6 +1,6 @@
 <template>
     <div class="bg-white">
-      <h1 class=" py-2 text-center px-2 text-4xl text-slate-500"> Products </h1>
+      <h1 class=" py-2 text-center px-2 text-4xl text-slate-500"> Product </h1>
       <div class="grid grid-flow-col grid-rows-2 gap-4 max-w-6xl mx-auto  py-5 px-5 text-slate-500 text-left shadow-xl ">
         <div class="bg-white row-span-3 mx-auto">
             <v-lazy-image 
@@ -17,9 +17,11 @@
 
             <div class="flex justify-between items-center gap-4">
               <p class="text-amber-600 font-semibold ml-auto mr-1">€ {{ product?.price.toFixed(2) }}</p>
-              <button class="shadow-xl rounded bg-amber-200 w-32 py-2 px-5 cursor-pointer hover:underline">Buy</button>
+              <button class="shadow-xl rounded bg-amber-200 w-32 py-2 px-5 cursor-pointer hover:underline">
+              <font-awesome-icon icon="basket-shopping" class="mr-2" />Buy</button>
             </div>
           </div>
+          <i class="fa-solid fa-basket-shopping"></i>
         </div>
       </div>
     </div>
