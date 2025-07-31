@@ -1,9 +1,19 @@
+import ProductDetailView from '@/views/ProductDetailView.vue';
 import ProductsView from '@/views/ProductsView.vue';
 
 import { createRouter, createWebHistory } from 'vue-router'
 
-const routes = [
-  { path: '/', component: ProductsView }
+export const routes = [
+  { path: '/', 
+    name: 'home',
+    component: ProductsView,
+    meta: { showInNav: true} 
+  },
+  {
+    path: '/products/:id',
+    name: 'productDetail',
+    component: ProductDetailView,
+  }
 ];
 
 const router = createRouter({

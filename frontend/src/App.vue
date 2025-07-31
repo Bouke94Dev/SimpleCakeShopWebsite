@@ -1,16 +1,17 @@
-<!-- shorthand for export default composition api -->
-<script setup>
-// import Header from './components/Header.vue';
-// import Footer from './components/Footer.vue';
-</script>
-
 <template>
-<!-- <Header /> -->
+<Header></Header> 
 <main>
   <router-View />
 </main>
-<!-- <Footer /> -->
+<Footer></Footer>
 </template>
+
+<!-- shorthand for export default composition api -->
+<script setup>
+import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
+</script>
+
 
 <style>
 

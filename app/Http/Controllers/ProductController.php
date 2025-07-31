@@ -15,4 +15,11 @@ class ProductController extends Controller
 
         return response()->json(ProductResource::collection($products));
     }
+
+    public function show(string $id): JsonResponse
+    {
+        $product = Product::with(['productImage'])->findorfail($id);
+
+        return response()->json(new ProductResource($product));
+    }
 }
