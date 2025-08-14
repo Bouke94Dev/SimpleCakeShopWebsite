@@ -4,9 +4,8 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 import './assets/style.css'
-// Font Awesome core en iconen importeren
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUser, faHome, faBasketShopping } from '@fortawesome/free-solid-svg-icons' // kies hier je icons
+import { faUser, faHome, faBasketShopping } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // here I add the fa icons I use for the project

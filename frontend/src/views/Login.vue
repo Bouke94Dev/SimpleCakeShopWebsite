@@ -36,16 +36,17 @@ import { login } from '@/services/productService'
 import { useRouter } from 'vue-router'
 import VLazyImage from 'v-lazy-image';
 import { getImageUrl } from '@/utils/helper'
-
+import { userStore } from '@/stores/userStore'
 const router = useRouter()
 
 const email = ref('')
 const password = ref('')
 const formErrors = ref<string | null>(null)
-
+const useUserStore = userStore()
 async function submitForm() {
   try {
     await login({ email: email.value, password: password.value })
+    await useUserStore.fetchUser()
     router.push({name: 'home'})
   } catch (error: any) {
     formErrors.value = error.response?.data?.message ?? 'Login failed. invalid credentials'
