@@ -3,8 +3,9 @@
 namespace App\Services;
 
 use App\Dto\LoginDTO;
-use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\Auth\Authenticatable;
 
 class AuthService
 {
