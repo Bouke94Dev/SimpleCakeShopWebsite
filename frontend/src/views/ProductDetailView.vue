@@ -1,5 +1,4 @@
 <template>
-    <div class="bg-white">
       <h1 class=" py-2 text-center px-2 text-4xl text-slate-500"> Product </h1>
       <div class="grid grid-flow-col grid-rows-2 gap-4 max-w-6xl mx-auto  py-5 px-5 text-slate-500 text-left shadow-xl ">
         <div class="bg-white row-span-3 mx-auto">
@@ -24,7 +23,6 @@
           <i class="fa-solid fa-basket-shopping"></i>
         </div>
       </div>
-    </div>
 </template>
 
 <script setup lang="ts">

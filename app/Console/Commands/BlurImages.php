@@ -8,7 +8,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 use Spatie\ImageOptimizer\OptimizerChainFactory;
 
-// $ php artisan images:BlurImages public/images/blurred (public/images/blurred is the argument of this command)
+// $ php artisan images:BlurImages public/images/pre (public/images/blurred is the argument of this command)
 class BlurImages extends Command
 {
     protected $signature = 'images:BlurImages {directory}';
