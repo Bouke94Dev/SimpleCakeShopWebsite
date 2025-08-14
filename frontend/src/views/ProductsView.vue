@@ -1,5 +1,4 @@
 <template>
-  <div class="bg-white">
     <h1 class=" py-2 text-center px-2 text-4xl text-slate-500"> Products </h1>
     <div class="grid grid-cols-3 gap-4 px-4 py-4 max-w-6xl mx-auto text-slate-500 text-left ">
       <div v-for="product in products" :key="product.id">
@@ -23,7 +22,6 @@
           </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">

@@ -8,7 +8,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 use Spatie\ImageOptimizer\OptimizerChainFactory;
 
-// $ php artisan images:optimize public/images (public/images is the argument of this command)
+// $ php artisan images:optimize public/images/pre (public/images is the argument of this command)
 class OptimizeImages extends Command
 {
     protected $signature = 'images:optimize {directory}';

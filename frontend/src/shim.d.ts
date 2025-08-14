@@ -11,3 +11,7 @@ declare module 'v-lazy-image' {
   const component: DefineComponent<any, any, any>;
   export default component;
 }
+
+declare module '@/ziggy' {
+  export const Ziggy: any
+}

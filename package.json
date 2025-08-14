@@ -4,7 +4,8 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "ziggy:copy": "php artisan ziggy:generate frontend/src/ziggy.ts"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.1.11",

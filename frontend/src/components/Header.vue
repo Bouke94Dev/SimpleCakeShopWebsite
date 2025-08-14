@@ -1,7 +1,7 @@
 <template>
     <header class= "bg-white py-5 px-5 text-slate-400 font-medium shadow-xl">
         <div class="flex justify-center w-full">
-            <div class="mx-4 text-slate-500">Cake Shop</div>
+            <div class="mx-4 text-teal-400">Cake Shop</div>
             <div class="mx-4 flex">
                 <nav>
                     <router-link

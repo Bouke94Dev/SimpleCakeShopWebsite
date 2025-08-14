@@ -1,6 +1,7 @@
 import ProductDetailView from '@/views/ProductDetailView.vue';
 import ProductsView from '@/views/ProductsView.vue';
 import Login from '@/views/Login.vue';
+import Register from '@/views/Register.vue';
 
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -21,7 +22,13 @@ export const routes = [
     name: 'login',
     component: Login,
     meta: { showInNav: true, icon: 'user'} 
-  }
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Register,
+    meta: { showInNav: false}
+  },
 ];
 
 const router = createRouter({

@@ -1,7 +1,9 @@
 <template>
 <Header></Header> 
 <main>
-  <router-View />
+  <div class="bg-white">
+     <router-View /> 
+  </div>
 </main>
 <Footer></Footer>
 </template>
