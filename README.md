@@ -16,6 +16,6 @@ Credits:
 
 TODO:
 
-* possibility of a user to leave a review on a cake
 * feature tests & unit tests & frontend tests
+* Linter for ts & improve vue code where needed
 * update readme
