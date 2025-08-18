@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
-use Illuminate\Http\Request;
-use Illuminate\Http\JsonResponse;
 use App\Http\Resources\ProductResource;
-use Illuminate\Routing\Controllers\Middleware;
+use App\Models\Product;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 
 class ProductController extends Controller implements HasMiddleware
 {
@@ -28,7 +27,7 @@ class ProductController extends Controller implements HasMiddleware
     public static function middleware(): array
     {
         return [
-            new Middleware('cache.headers:public;max_age=31536000;etag')
+            new Middleware('cache.headers:public;max_age=31536000;etag'),
         ];
     }
 }

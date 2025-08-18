@@ -3,9 +3,8 @@
 namespace App\Services;
 
 use App\Dto\LoginDTO;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
 class AuthService
 {
@@ -25,5 +24,10 @@ class AuthService
     public function loginWithoutAttempt(Authenticatable $user): void
     {
         Auth::login($user);
+    }
+
+    public function getUserId(): int
+    {
+        return Auth::id();
     }
 }

@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\User;
 use App\Dto\RegisterDTO;
-use App\Services\AuthService;
-use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\RegisterRequest;
+use App\Models\User;
+use App\Services\AuthService;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Hash;
 
-class RegisterController {
-
+class RegisterController
+{
     public function store(RegisterRequest $registerRequest, AuthService $authService): JsonResponse
     {
         $validated = $registerRequest->validated();
@@ -20,7 +20,7 @@ class RegisterController {
         $user = User::create([
             'name' => $registerDto->name,
             'email' => $registerDto->email,
-            'password' => Hash::make($registerDto->password)
+            'password' => Hash::make($registerDto->password),
         ]);
 
         $authService->loginWithoutAttempt($user);
@@ -28,9 +28,8 @@ class RegisterController {
         $registerRequest->session()->regenerate();
 
         return Response()->json([
-            'message' => 'account registration was succesfull'
+            'message' => 'account registration was succesfull',
         ]);
 
     }
 }
-

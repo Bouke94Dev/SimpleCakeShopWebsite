@@ -18,11 +18,11 @@ class ReviewFactory extends Factory
      * @return array<string, mixed>
      */
     protected $reviews = [
-        ['rating' => 1, 'description' => 'Terrible. Never again.'],
-        ['rating' => 2, 'description' => 'Not great.'],
-        ['rating' => 3, 'description' => 'Okay.'],
-        ['rating' => 4, 'description' => 'Pretty good.'],
-        ['rating' => 5, 'description' => 'Amazing!'],
+        ['rating' => 1, 'comment' => 'Terrible. Never again.'],
+        ['rating' => 2, 'comment' => 'Not great.'],
+        ['rating' => 3, 'comment' => 'Okay.'],
+        ['rating' => 4, 'comment' => 'Pretty good.'],
+        ['rating' => 5, 'comment' => 'Amazing!'],
     ];
 
     public function definition()
@@ -31,7 +31,7 @@ class ReviewFactory extends Factory
 
         return [
             'rating' => $review['rating'],
-            'description' => $review['description'],
+            'comment' => $review['comment'],
             'user_id' => User::inRandomOrder()->value('id'),
             'product_id' => Product::inRandomOrder()->value('id'),
         ];
