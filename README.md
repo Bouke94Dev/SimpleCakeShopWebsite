@@ -1,3 +1,5 @@
+# Simple Cake Shop Website
+
 ![cover](public/images/showcase/cake_shop_example.jpg)
 
 This repository is a work in progress and is just a simple project of my to become better in Laravel. This will be a simple website cake shop which does not make use of blade (SSR) but instead uses a frontend vue.js
