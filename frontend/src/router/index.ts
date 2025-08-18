@@ -64,7 +64,6 @@ const router = createRouter({
 router.beforeEach(async (to, from, next) => {
   const useUserStore = userStore()
 
-  // alleen fetchen als we nog niet eerder hebben geprobeerd
   if (!useUserStore.initialized) {
     await useUserStore.fetchUser()
   }

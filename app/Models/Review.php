@@ -9,13 +9,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Review extends Model
 {
     /** @use HasFactory<\Database\Factories\ReviewFactory> */
-    use hasFactory;
-
-    public $timestamps = false;
+    use HasFactory;
 
     protected $fillable = [
+        'user_id',
+        'product_id',
         'rating',
-        'description',
+        'comment',
     ];
 
     public function user(): BelongsTo

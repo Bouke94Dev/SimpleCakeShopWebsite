@@ -4,14 +4,15 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
-use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManager;
 use Spatie\ImageOptimizer\OptimizerChainFactory;
 
 // $ php artisan images:BlurImages public/images/pre (public/images/blurred is the argument of this command)
 class BlurImages extends Command
 {
     protected $signature = 'images:BlurImages {directory}';
+
     protected $description = 'Resize and optimize images in a directory';
 
     public function handle()
@@ -20,8 +21,9 @@ class BlurImages extends Command
 
         $directory = $this->argument('directory');
 
-        if (!is_dir($directory)) {
+        if (! is_dir($directory)) {
             $this->error("Directory does not exist: {$directory}");
+
             return 1;
         }
 
@@ -42,6 +44,7 @@ class BlurImages extends Command
         }
 
         $this->info('All images blurred & optimzed!');
+
         return 0;
     }
 }

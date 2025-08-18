@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+
+class ReviewRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     */
+    public function rules(): array
+    {
+        return [
+            'product_id' => [
+                'required',
+                'exists:products,id',
+                Rule::unique('reviews')->where(fn ($query) => $query->where('user_id', $this->user()->id)),
+            ],
+            'rating' => 'required|integer|min:1|max:5',
+            'comment' => 'nullable:string',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'product_id.unique' => 'Je hebt dit product al gereviewd.',
+            'product_id.required' => 'Je moet een product selecteren om te reviewen.',
+            'rating.required' => 'Je moet een rating geven.',
+        ];
+    }
+}

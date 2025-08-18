@@ -23,6 +23,8 @@
           <i class="fa-solid fa-basket-shopping"></i>
         </div>
       </div>
+    <ShowUserReview v-if="product" :productId="product?.id" />
+    <AddUserReview v-if="product && store.user" :productId="product?.id" />
 </template>
 
 <script setup lang="ts">
@@ -33,10 +35,14 @@ import { getImageUrl } from '@/utils/helper'
 import { fetchProduct } from '@/services/productService';
 import VLazyImage from 'v-lazy-image';
 import type { Product } from '@/types/product';
-
+import ShowUserReview from '@/components/ShowUserReview.vue'
+import AddUserReview from '@/components/AddUserReview.vue'
+import { userStore } from '@/stores/userStore';
 
 const product = ref<Product>()
 const route = useRoute()
+const store = userStore();
+
 
 onMounted(async() => {
     const id = route.params.id as string
